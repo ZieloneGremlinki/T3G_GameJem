@@ -24,6 +24,9 @@ public class RetardationModifiers : MonoBehaviour{
         [SerializeField] private CircleCollider2D coll;
         private Rigidbody2D rb;
         private float HalfLife;
+        private float T,mass;
+        private bool check = true;
+        private bool start_halflife = false;
 
     void Start(){
         rb = GetComponent<Rigidbody2D>();
@@ -49,9 +52,26 @@ public class RetardationModifiers : MonoBehaviour{
                 coll.sharedMaterial = newMaterial;
                 break;
             case Property.HalfLife:
+                if (HalfLife != 0)
+                    start_halflife = true;
                 HalfLife = value;
                 break;
                 
         }
+        
+    }
+    void Update(){
+        if(start_halflife)
+            CalculateHalfLifeMass(HalfLife);
+    }
+    void CalculateHalfLifeMass(float HalfLife){
+        if(check){
+           mass = rb.mass;
+           check = false;
+        }
+        T += 1f * Time.deltaTime;
+        Debug.Log(rb.mass);
+        rb.mass = mass * (float)System.Math.Round((Mathf.Pow(0.5f,((float)T/(float)HalfLife))),2);
+        //Debug.Log("Mass: " + rb.mass + "|" + T/HalfLife + "|" + T + "|" + System.Math.Round((Mathf.Pow(0.5f,((float)T/(float)HalfLife))),2));
     }
 }
