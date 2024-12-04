@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RetardationModifiers : MonoBehaviour{   
-    enum Property{ 
+    public enum Property{ 
         Gravity,
         Material,
         Mass,
@@ -31,7 +31,7 @@ public class RetardationModifiers : MonoBehaviour{
     void Start(){
         rb = GetComponent<Rigidbody2D>();
     }
-    void UpdateGuitardationValues(Property property,float value){
+    public void UpdateGuitardationValues(Property property,float value){
         PhysicsMaterial2D newMaterial = new PhysicsMaterial2D("Bruhh");
         switch(property){
             case Property.Gravity:

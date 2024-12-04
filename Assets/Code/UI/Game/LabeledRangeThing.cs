@@ -7,6 +7,11 @@ using UnityEngine.UI;
 
 public class LabeledRangeThing : MonoBehaviour
 {
+    [Header("Ball elements")]
+    [SerializeField] 
+    private RetardationModifiers.Property prop;
+    [SerializeField]
+    private GameObject Ball;
     [Header("UI Elements")]
     [SerializeField]
     private Slider _rangeThing;
@@ -33,6 +38,7 @@ public class LabeledRangeThing : MonoBehaviour
     
     private void Awake()
     {
+       var ballSc = Ball.GetComponent<RetardationModifiers>();
         _label.text = _labelText;
         _rangeThing.minValue = _minValue;
         _rangeThing.maxValue = _maxValue;
@@ -41,6 +47,8 @@ public class LabeledRangeThing : MonoBehaviour
         _rangeThing.onValueChanged.AddListener(newVal =>
         {
             SetValue(newVal);
+            Debug.Log("AUIFGUAASDFGIUAFSDGIUSAFIUBADFGIU");
+            ballSc.UpdateGuitardationValues(prop, newVal);
             //TODO: Add modifier enum and stat change
         });
     }
