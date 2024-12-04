@@ -4,7 +4,7 @@ namespace GreenGremlins
 {
     public class GameHUDController : MonoBehaviour
     {
-        [SerializeField]]
+        [SerializeField]
         private GameHUDView _view;
         
         public void Initialize()
