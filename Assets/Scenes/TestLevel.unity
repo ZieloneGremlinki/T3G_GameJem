@@ -1195,6 +1195,18 @@ PrefabInstance:
       propertyPath: Ball
       value: 
       objectReference: {fileID: 224891189}
+    - target: {fileID: 118138609777124563, guid: e1b059c30aa4d4a3aa15f775f435b0aa, type: 3}
+      propertyPath: _maxValue
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 118138609777124563, guid: e1b059c30aa4d4a3aa15f775f435b0aa, type: 3}
+      propertyPath: _minValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 118138609777124563, guid: e1b059c30aa4d4a3aa15f775f435b0aa, type: 3}
+      propertyPath: _defaultValue
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 987018576689000576, guid: e1b059c30aa4d4a3aa15f775f435b0aa, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1211,6 +1223,10 @@ PrefabInstance:
       propertyPath: Ball
       value: 
       objectReference: {fileID: 224891189}
+    - target: {fileID: 2334287304442410255, guid: e1b059c30aa4d4a3aa15f775f435b0aa, type: 3}
+      propertyPath: _defaultValue
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2988151580287110224, guid: e1b059c30aa4d4a3aa15f775f435b0aa, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1247,6 +1263,10 @@ PrefabInstance:
       propertyPath: Ball
       value: 
       objectReference: {fileID: 224891189}
+    - target: {fileID: 6115276709517210913, guid: e1b059c30aa4d4a3aa15f775f435b0aa, type: 3}
+      propertyPath: _defaultValue
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6600967511731401549, guid: e1b059c30aa4d4a3aa15f775f435b0aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1299,10 +1319,22 @@ PrefabInstance:
       propertyPath: Ball
       value: 
       objectReference: {fileID: 224891189}
+    - target: {fileID: 7989498831695737098, guid: e1b059c30aa4d4a3aa15f775f435b0aa, type: 3}
+      propertyPath: _maxValue
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7989498831695737098, guid: e1b059c30aa4d4a3aa15f775f435b0aa, type: 3}
+      propertyPath: _defaultValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8358206424248374760, guid: e1b059c30aa4d4a3aa15f775f435b0aa, type: 3}
       propertyPath: Ball
       value: 
       objectReference: {fileID: 224891189}
+    - target: {fileID: 8358206424248374760, guid: e1b059c30aa4d4a3aa15f775f435b0aa, type: 3}
+      propertyPath: _defaultValue
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8876896154166866834, guid: e1b059c30aa4d4a3aa15f775f435b0aa, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
