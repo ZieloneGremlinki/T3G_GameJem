@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using GreenGremlins.Code;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace GreenGremlins
 {
@@ -10,6 +11,8 @@ namespace GreenGremlins
     {
         [SerializeField]
         private MainMenuView _view;
+        [SerializeField] 
+        private SettingsController _settings;
 
         public void Initialize()
         {
@@ -20,12 +23,22 @@ namespace GreenGremlins
                 OnQuitPressed = QuitPressed
             });
         }
+        
+        public void ToggleMenu()
+        {
+            gameObject.SetActive(!gameObject.activeInHierarchy);
+        }
 
         private void OnEnable()
         {
             Initialize();
         }
 
+        private void OnDisable()
+        {
+            _view.Hide();
+        }
+        
         private void PlayPressed()
         {
             Debug.Log("Play the game", this);
@@ -34,7 +47,8 @@ namespace GreenGremlins
         
         private void SettingsPressed()
         {
-            Debug.Log("TODO: Open settings", this);
+            ToggleMenu();
+            _settings.ToggleMenu();
         }
         private void QuitPressed()
         {
