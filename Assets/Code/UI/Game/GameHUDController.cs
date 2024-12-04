@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace GreenGremlins
@@ -11,11 +12,27 @@ namespace GreenGremlins
         {
             _view.Show(new GameHUDModel
             {
-                OnGameEnd = GameEnd
+                OnGameEnd = GameEnd,
+                OnToggleHUD = ToggleHUD,
+                OnRespawnBall = RespawnBall
             });
         }
 
-        public void GameEnd(bool state)
+        private void OnEnable()
+        {
+            Initialize();
+        }
+
+        private void GameEnd(bool state)
+        {
+        }
+
+        private void ToggleHUD()
+        {
+            _view.GameHUDActive = !_view.GameHUDActive;
+        }
+
+        private void RespawnBall()
         {
         }
     }

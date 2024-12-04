@@ -10,8 +10,6 @@ public class LabeledRangeThing : MonoBehaviour
     [Header("Ball elements")]
     [SerializeField] 
     private RetardationModifiers.Property prop;
-    [SerializeField]
-    private GameObject Ball;
     [Header("UI Elements")]
     [SerializeField]
     private Slider _rangeThing;
@@ -30,6 +28,8 @@ public class LabeledRangeThing : MonoBehaviour
     [SerializeField]
     private string _labelText = "Default Label";
 
+    private GameObject _ball;
+    
     private void SetValue(float newVal)
     {
         float val = (newVal / _rangeThing.maxValue) * 100;
@@ -38,7 +38,9 @@ public class LabeledRangeThing : MonoBehaviour
     
     private void Awake()
     {
-       var ballSc = Ball.GetComponent<RetardationModifiers>();
+        _ball = GameObject.FindWithTag("Player");
+        
+        RetardationModifiers ballSc = _ball.GetComponent<RetardationModifiers>();
         _label.text = _labelText;
         _rangeThing.minValue = _minValue;
         _rangeThing.maxValue = _maxValue;

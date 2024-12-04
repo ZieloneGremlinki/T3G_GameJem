@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using GreenGremlins.Code;
 using UnityEngine;
 
 namespace GreenGremlins
@@ -19,9 +21,15 @@ namespace GreenGremlins
             });
         }
 
+        private void OnEnable()
+        {
+            Initialize();
+        }
+
         private void PlayPressed()
         {
             Debug.Log("Play the game", this);
+            ElSceneManeger.LoadScene(1);
         }
         
         private void SettingsPressed()
