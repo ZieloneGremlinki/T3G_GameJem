@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4759492431227473084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc439ce9d1bfb34a821f7d6fabc4fef, type: 3}
+  m_Name: Linux
+  m_EditorClassIdentifier: 
+  enabled: 1
+  distributionList:
+    distributions: []
+  architectures:
+  - target: 24
+    name: Linux x64
+    enabled: 1
+    binaryNameFormat: '{0}.x86_64'
+  variants: []
+  scriptingBackends:
+  - scriptingImplementation: 0
+    name: Mono
+    enabled: 1
+  - scriptingImplementation: 1
+    name: IL2CPP
+    enabled: 0
+  platformName: Linux
+  targetGroup: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5886119a5c7b34d8872ab527ca3e1b, type: 3}
+  m_Name: SuperUnityBuildSettings
+  m_EditorClassIdentifier: 
+  _basicSettings:
+    baseBuildFolder: Builds
+    buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/$ARCHITECTURE/$SCRIPTING_BACKEND
+    openFolderPostBuild: 1
+    constantsFileLocation: Assets/SuperUnityBuild
+  _productParameters:
+    buildCounter: 0
+    buildVersion: 1.0.0.3
+    versionTemplate: 1.0.0.$BUILD
+    autoGenerate: 1
+    syncWithPlayerSettings: 0
+  _releaseTypeList:
+    releaseTypes:
+    - typeName: Release
+      bundleIdentifier: com.GreenGremlins-HereticsTeam.T3G-GameJem
+      companyName: GreenGremlins_HereticsTeam
+      productName: T3G_GameJem
+      syncAppNameWithProduct: 1
+      appBuildName: T3G_GameJem
+      buildOptions: 0
+      customDefines: 
+      sceneList:
+        releaseScenes:
+        - fileGUID: 8c9cfa26abfee488c85f1582747f6a02
+          sceneActive: 1
+        - fileGUID: d59996f9064086b43a5911aabf8991c8
+          sceneActive: 1
+        - fileGUID: c01f1cad36f7349fab5e4387335d8662
+          sceneActive: 1
+        - fileGUID: d090ede78280a482eb11e46c54d1824e
+          sceneActive: 1
+  _platformList:
+    platforms:
+    - {fileID: -4759492431227473084}
+    - {fileID: 2799523509027106293}
+  _projectConfigurations:
+    configSet:
+      _Buckets: ffffffffffffffff0600000004000000020000000500000001000000
+      _HashCodes: 7bbca86c134e5c09fe3787560b4e734fb3f3dc63510e9f592d6dfd48
+      _Next: ffffffffffffffffffffffffffffffff00000000ffffffff03000000
+      _Count: 7
+      _Version: 7
+      _FreeList: -1
+      _FreeCount: 0
+      _Keys:
+      - Release/Linux/Linux x64/Mono
+      - Release/Linux/Linux x64
+      - Release/Linux
+      - Release/PC/Windows x86 (App)/Mono
+      - Release/PC/Windows x86 (App)
+      - Release/PC
+      - Release
+      _Values:
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Release/Linux/Linux x64/Mono
+      - enabled: 1
+        childKeys:
+        - Release/Linux/Linux x64
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Release/PC/Windows x86 (App)/Mono
+      - enabled: 1
+        childKeys:
+        - Release/PC/Windows x86 (App)
+      - enabled: 1
+        childKeys:
+        - Release/Linux
+        - Release/PC
+    showViewOptions: 0
+    showConfigs: 0
+    showBuildInfo: 0
+    hideDisabled: 0
+    treeView: 0
+    selectedKeyChain: 
+  _preBuildActions:
+    buildActions: []
+  _postBuildActions:
+    buildActions: []
+--- !u!114 &2799523509027106293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2786f6b2301a94f4288672ff5305244c, type: 3}
+  m_Name: PC
+  m_EditorClassIdentifier: 
+  enabled: 1
+  distributionList:
+    distributions: []
+  architectures:
+  - target: 5
+    name: Windows x86
+    enabled: 1
+    binaryNameFormat: '{0}.exe'
+  - target: 19
+    name: Windows x64
+    enabled: 0
+    binaryNameFormat: '{0}.exe'
+  variants:
+  - variantName: Build Output
+    selectedIndex: 0
+    values:
+    - App
+    - Visual Studio Solution
+    isFlag: 0
+  scriptingBackends:
+  - scriptingImplementation: 0
+    name: Mono
+    enabled: 1
+  - scriptingImplementation: 1
+    name: IL2CPP
+    enabled: 0
+  platformName: PC
+  targetGroup: 1
