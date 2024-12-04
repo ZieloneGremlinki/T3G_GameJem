@@ -5,14 +5,15 @@ using UnityEngine.SceneManagement;
 
 namespace GreenGremlins
 {
-    public class GameHUDController : MonoBehaviour
+public class GameHUDController : MonoBehaviour
     {
         [SerializeField]
         private GameHUDView _view;
+        private GameHUDModel _data;
         
         public void Initialize()
         {
-            GameHUDModel model = new GameHUDModel
+            _data = new GameHUDModel
             {
                 OnToggleHUD = ToggleHUD,
                 OnRespawnBall = RespawnBall,
@@ -20,7 +21,17 @@ namespace GreenGremlins
                 OnNextLevel = NextLevel,
                 OnReplayLevel = ReplayLevel
             };
-            _view.Show(model);
+            _view.Show(_data);
+        }
+
+        public void Win()
+        {
+          _data.OnGameEnd?.Invoke(true);
+        }
+
+        public void Lose()
+        {
+          _data.OnGameEnd?.Invoke(false);
         }
 
         private void OnEnable()
@@ -53,7 +64,7 @@ namespace GreenGremlins
                 ReplayLevel();
             }
         }
-        
+
         private void BackToMenu()
         {
             ElSceneManeger.LoadScene((int)ElSceneManeger.SceneIdx.Menu);
@@ -66,7 +77,7 @@ namespace GreenGremlins
 
         private void ReplayLevel()
         {
-            ElSceneManeger.LoadScene(Variables.CurrentLevel);
+            ElSceneManeger.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
