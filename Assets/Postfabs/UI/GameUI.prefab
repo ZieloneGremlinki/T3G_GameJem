@@ -1984,6 +1984,7 @@ MonoBehaviour:
   _gameHUDToggle: {fileID: 2035377588769866349}
   _gameHUDToggleText: {fileID: 2990637694550497664}
   _gameHUDRespawn: {fileID: 6426707493175043997}
+  _gameHUDRespawnText: {fileID: 1185534011547339552}
   _winScreen: {fileID: 2717949631088056638}
   _winnerNext: {fileID: 7029187471220786055}
   _winnerBack: {fileID: 8599137139833699007}

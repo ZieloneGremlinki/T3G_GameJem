@@ -1,6 +1,7 @@
 using System;
 using GreenGremlins.Code;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -31,6 +32,8 @@ namespace GreenGremlins
         private TMP_Text _gameHUDToggleText;
         [SerializeField]
         private Button _gameHUDRespawn;
+        [SerializeField]
+        private TMP_Text _gameHUDRespawnText;
         [Header("Win Screen")]
         [SerializeField]
         private GameObject _winScreen;
@@ -47,6 +50,7 @@ namespace GreenGremlins
         private Button _loserBack;
 
         private bool _gameHUDActive = false;
+        private bool _firstTime;
 
         public bool GameHUDActive
         {
@@ -55,6 +59,16 @@ namespace GreenGremlins
             {
                 _gameHUDToggleText.text = value ? "HIDE" : "SHOW";
                 _gameHUDActive = value;
+            }
+        }
+
+        public bool FirstTime
+        {
+            get { return _firstTime; }
+            set
+            {
+                _firstTime = value;
+                _gameHUDRespawnText.text = value ? "START" : "RESPAWN";
             }
         }
 
@@ -73,6 +87,8 @@ namespace GreenGremlins
             
             _loserBack.onClick.AddListener(data.OnMenuBack);
             _loserReplay.onClick.AddListener(data.OnReplayLevel);
+
+            FirstTime = true;
         }
 
         public void Hide()

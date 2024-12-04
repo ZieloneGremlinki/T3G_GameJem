@@ -30,6 +30,7 @@ public class RetardationModifiers : MonoBehaviour{
 
     void Start(){
         rb = GetComponent<Rigidbody2D>();
+        SetState(false);
     }
     public void UpdateGuitardationValues(Property property,float value){
         PhysicsMaterial2D newMaterial = new PhysicsMaterial2D("Bruhh");
@@ -60,6 +61,12 @@ public class RetardationModifiers : MonoBehaviour{
         }
         
     }
+
+    public void SetState(bool state)
+    {
+        rb.bodyType = state ? RigidbodyType2D.Dynamic : RigidbodyType2D.Static;
+    }
+    
     void Update(){
         if(start_halflife)
             CalculateHalfLifeMass(HalfLife);

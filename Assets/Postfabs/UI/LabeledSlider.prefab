@@ -109,8 +109,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_AnchoredPosition: {x: 3.0097961, y: 0}
+  m_SizeDelta: {x: 3, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5809226723803187185
 CanvasRenderer:
@@ -566,7 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -670,15 +670,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1dd57fff1651a885ac017d699559366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prop: 0
   _rangeThing: {fileID: 5076415724150803593}
   _label: {fileID: 302346940563017804}
   _value: {fileID: 600817536794502979}
   _minValue: 0
   _maxValue: 1
   _defaultValue: 1
+  _maxOver: 0
+  _rounding: 2
   _labelText: Default Label
   _usePercentage: 1
+  _wholeNumbersOnly: 0
 --- !u!1 &9171121500335914356
 GameObject:
   m_ObjectHideFlags: 0

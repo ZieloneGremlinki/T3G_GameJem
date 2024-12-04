@@ -35,9 +35,24 @@ namespace GreenGremlins
 
         private void RespawnBall()
         {
-            // TODO: Make ball logic
+            if (_view.FirstTime)
+            {
+                RetardationModifiers plr = GameObject.FindWithTag("Player").GetComponent<RetardationModifiers>();
+                if (plr == null)
+                {
+                    Debug.LogError("Player not found");
+                    return;
+                }
+                
+                plr.SetState(true);
+                _view.FirstTime = false;
+            }
+            else
+            {
+                ReplayLevel();
+            }
         }
-
+        
         private void BackToMenu()
         {
             ElSceneManeger.LoadScene((int)ElSceneManeger.SceneIdx.Menu);
@@ -50,7 +65,7 @@ namespace GreenGremlins
 
         private void ReplayLevel()
         {
-            ElSceneManeger.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            ElSceneManeger.LoadScene(Variables.CurrentLevel);
         }
     }
 }
