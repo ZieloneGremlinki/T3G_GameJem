@@ -49,7 +49,6 @@ public class LabeledRangeThing : MonoBehaviour
             SetValue(newVal);
             Debug.Log("AUIFGUAASDFGIUAFSDGIUSAFIUBADFGIU");
             ballSc.UpdateGuitardationValues(prop, newVal);
-            //TODO: Add modifier enum and stat change
         });
     }
 }
