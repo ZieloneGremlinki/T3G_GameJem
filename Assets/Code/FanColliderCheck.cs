@@ -11,9 +11,9 @@ public class FanColliderCheck : MonoBehaviour
         Right
     }
     [SerializeField] private Direction dir;
-    float bounceForce = 1f;
+    float bounceForce = 0.400f;
 void OnTriggerStay2D(Collider2D other) {
-    if(other.gameObject.tag == "Player"){
+    if(other.gameObject.tag == "Player" || other.gameObject.tag == "Rubbish"){
         Debug.Log("Fan used! Direction: " + dir);
         var specimen = other.gameObject.GetComponent<Rigidbody2D>();
         switch(dir){
