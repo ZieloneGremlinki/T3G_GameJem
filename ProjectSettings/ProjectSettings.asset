@@ -142,7 +142,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 1.0.0.3
+  bundleVersion: 1.0.0.1
   preloadedAssets:
   - {fileID: -944628639613478452, guid: a37ef3ae843bb15a5b6c235e7cb1d81d, type: 3}
   metroInputSource: 0
@@ -167,12 +167,12 @@ PlayerSettings:
   applicationIdentifier:
     Standalone: com.GreenGremlins-HereticsTeam.T3G-GameJem
   buildNumber:
-    Standalone: 3
+    Standalone: 4
     VisionOS: 0
-    iPhone: 3
+    iPhone: 4
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
-  AndroidBundleVersionCode: 4
+  AndroidBundleVersionCode: 5
   AndroidMinSdkVersion: 22
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -661,7 +661,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Standalone: 
+    Standalone: BUILD_TYPE_RELEASE;BUILD_PLATFORM_LINUX;BUILD_ARCH_LINUXX64;BUILD_BACKEND_MONO
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

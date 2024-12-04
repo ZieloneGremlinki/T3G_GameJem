@@ -71,8 +71,6 @@ MonoBehaviour:
           sceneActive: 1
         - fileGUID: c01f1cad36f7349fab5e4387335d8662
           sceneActive: 1
-        - fileGUID: d090ede78280a482eb11e46c54d1824e
-          sceneActive: 1
   _platformList:
     platforms:
     - {fileID: -4759492431227473084}

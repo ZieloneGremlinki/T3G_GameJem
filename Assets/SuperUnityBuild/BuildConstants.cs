@@ -15,7 +15,6 @@ namespace SuperUnityBuild.Generated
         None,
         Linux,
         PC,
-        macOS,
     }
 
     public enum ScriptingBackend
@@ -29,7 +28,6 @@ namespace SuperUnityBuild.Generated
         None,
         Linux_x64,
         Windows_x86,
-        macOS,
     }
 
     public enum Distribution
@@ -39,12 +37,12 @@ namespace SuperUnityBuild.Generated
 
     public static class BuildConstants
     {
-        public static readonly DateTime buildDate = new DateTime(638689326140107980);
+        public static readonly DateTime buildDate = new DateTime(638689386136030080);
         public const string version = "1.0.0.1";
         public const ReleaseType releaseType = ReleaseType.Release;
-        public const Platform platform = Platform.macOS;
+        public const Platform platform = Platform.Linux;
         public const ScriptingBackend scriptingBackend = ScriptingBackend.Mono;
-        public const Architecture architecture = Architecture.macOS;
+        public const Architecture architecture = Architecture.Linux_x64;
         public const Distribution distribution = Distribution.None;
     }
 }
