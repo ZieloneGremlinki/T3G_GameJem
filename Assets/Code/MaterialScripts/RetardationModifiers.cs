@@ -54,7 +54,7 @@ public class RetardationModifiers : MonoBehaviour{
             case Property.HalfLife:
                 if (HalfLife != 0)
                     start_halflife = true;
-                HalfLife = value;
+                    HalfLife = value;
                 break;
                 
         }
@@ -72,6 +72,5 @@ public class RetardationModifiers : MonoBehaviour{
         T += 1f * Time.deltaTime;
         Debug.Log(rb.mass);
         rb.mass = mass * (float)System.Math.Round((Mathf.Pow(0.5f,((float)T/(float)HalfLife))),2);
-        //Debug.Log("Mass: " + rb.mass + "|" + T/HalfLife + "|" + T + "|" + System.Math.Round((Mathf.Pow(0.5f,((float)T/(float)HalfLife))),2));
     }
 }
