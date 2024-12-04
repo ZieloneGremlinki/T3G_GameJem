@@ -80,4 +80,9 @@ public class RetardationModifiers : MonoBehaviour{
         Debug.Log(rb.mass);
         rb.mass = mass * (float)System.Math.Round((Mathf.Pow(0.5f,((float)T/(float)HalfLife))),2);
     }
+
+    public void SetInvis(bool b)
+    {
+        gameObject.SetActive(b);
+    }
 }
