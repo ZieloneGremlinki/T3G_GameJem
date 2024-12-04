@@ -46,6 +46,7 @@ namespace GreenGremlins
                 
                 plr.SetState(true);
                 _view.FirstTime = false;
+                ToggleHUD();
             }
             else
             {

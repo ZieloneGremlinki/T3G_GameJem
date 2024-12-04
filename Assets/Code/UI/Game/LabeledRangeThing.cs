@@ -35,6 +35,11 @@ public class LabeledRangeThing : MonoBehaviour
     private bool _usePercentage = true;
     [SerializeField]
     private bool _wholeNumbersOnly = false;
+
+    public void SetActive(bool active)
+    {
+        _rangeThing.interactable = active;
+    }
     
     private void SetValue(float newVal)
     {

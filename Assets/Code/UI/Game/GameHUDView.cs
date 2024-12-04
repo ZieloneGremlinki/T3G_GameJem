@@ -48,6 +48,8 @@ namespace GreenGremlins
         private Button _loserReplay;
         [SerializeField]
         private Button _loserBack;
+        [SerializeField]
+        private LabeledRangeThingBall[] _sliders;
 
         private bool _gameHUDActive = false;
         private bool _firstTime;
@@ -68,6 +70,14 @@ namespace GreenGremlins
             set
             {
                 _firstTime = value;
+                if (!_firstTime)
+                {
+                    foreach (LabeledRangeThingBall slider in _sliders) slider.SetActive(false);
+                }
+                else
+                {
+                    foreach (LabeledRangeThingBall slider in _sliders) slider.SetActive(true);
+                }
                 _gameHUDRespawnText.text = value ? "START" : "RESPAWN";
             }
         }
