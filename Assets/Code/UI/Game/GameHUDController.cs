@@ -21,7 +21,7 @@ namespace GreenGremlins
                 OnReplayLevel = ReplayLevel
             };
             _view.Show(model);
-            model.OnGameEnd.Invoke(true);
+            //model.OnGameEnd.Invoke(true);
         }
 
         private void OnEnable()
