@@ -29,7 +29,7 @@ namespace GreenGremlins
         private void PlayPressed()
         {
             Debug.Log("Play the game", this);
-            ElSceneManeger.LoadScene(1);
+            ElSceneManeger.NextScene();
         }
         
         private void SettingsPressed()
@@ -39,6 +39,7 @@ namespace GreenGremlins
         private void QuitPressed()
         {
             Debug.Log("Application Quit", this);
+            Application.Quit();
         }
         
     }

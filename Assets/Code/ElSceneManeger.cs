@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace GreenGremlins.Code
@@ -16,19 +17,22 @@ namespace GreenGremlins.Code
         
         public static void NextScene()
         {
-            LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            LoadScene(++Variables.CurrentLevel);
         }
         
         public static void PrevScene()
         {
-            LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            LoadScene(--Variables.CurrentLevel);
         }
 
         public static int ParseScene(int scene)
         {
             if (scene == (int)SceneIdx.Menu) return 0;
             if (scene == (int)SceneIdx.Loader) return 1;
-            if (scene >= 1 && scene <= Variables.MAX_LEVELS) return scene + 1;
+            if (scene >= 1 && scene <= Variables.MAX_LEVELS)
+            {
+                return scene + 1;
+            }    
             return 0; // Fallback to menu
         }
         
@@ -40,6 +44,7 @@ namespace GreenGremlins.Code
         public static void LoadScene(int scene)
         {
             SceneToLoad = scene;
+            Debug.Log($"Scene {SceneToLoad}");
             SceneManager.LoadScene(ParseScene((int)SceneIdx.Loader));
         }
     }
