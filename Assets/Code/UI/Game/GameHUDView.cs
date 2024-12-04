@@ -1,4 +1,5 @@
 using System;
+using GreenGremlins.Code;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,6 +12,9 @@ namespace GreenGremlins
         public UnityAction<bool> OnGameEnd;
         public UnityAction OnToggleHUD;
         public UnityAction OnRespawnBall;
+        public UnityAction OnMenuBack;
+        public UnityAction OnNextLevel;
+        public UnityAction OnReplayLevel;
     }
     
     public class GameHUDView : MonoBehaviour
@@ -30,9 +34,17 @@ namespace GreenGremlins
         [Header("Win Screen")]
         [SerializeField]
         private GameObject _winScreen;
+        [SerializeField]
+        private Button _winnerNext;
+        [SerializeField]
+        private Button _winnerBack;
         [Header("Looser Screen")]
         [SerializeField]
         private GameObject _loserBabyScreen;
+        [SerializeField]
+        private Button _loserReplay;
+        [SerializeField]
+        private Button _loserBack;
 
         private bool _gameHUDActive = false;
 
@@ -55,6 +67,12 @@ namespace GreenGremlins
             
             _gameHUDToggle.onClick.AddListener(data.OnToggleHUD);
             _gameHUDRespawn.onClick.AddListener(data.OnRespawnBall);
+            
+            _winnerNext.onClick.AddListener(data.OnNextLevel);
+            _winnerBack.onClick.AddListener(data.OnMenuBack);
+            
+            _loserBack.onClick.AddListener(data.OnMenuBack);
+            _loserReplay.onClick.AddListener(data.OnReplayLevel);
         }
 
         public void Hide()
@@ -94,7 +112,6 @@ namespace GreenGremlins
             switch (scr)
             {
                 default:
-                case 0:
                     ToggleScreen(scr, true);
                     ToggleScreen(1, false);
                     ToggleScreen(2, false);

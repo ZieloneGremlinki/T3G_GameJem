@@ -12,10 +12,6 @@ namespace GreenGremlins
         [SerializeField]
         private LoadingView _view;
 
-        public void Initialize()
-        {
-        }
-
         private void Start()
         {
             StartCoroutine(LoadScene());

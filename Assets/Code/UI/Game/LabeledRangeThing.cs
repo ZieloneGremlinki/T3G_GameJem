@@ -27,13 +27,16 @@ public class LabeledRangeThing : MonoBehaviour
     private float _defaultValue = 1;
     [SerializeField]
     private string _labelText = "Default Label";
-
+    [SerializeField]
+    private bool _usePercentage = true;
+    
     private GameObject _ball;
     
     private void SetValue(float newVal)
     {
-        float val = (newVal / _rangeThing.maxValue) * 100;
-        _value.text = $"{Math.Round(val, 2)}%";
+        float val = _usePercentage ? ((newVal / _rangeThing.maxValue) * 100) : newVal;
+        _value.text = $"{Math.Round(val, 2)}{(_usePercentage ? "%" : "")}";
+        _rangeThing.value = newVal;
     }
     
     private void Awake()
@@ -44,7 +47,6 @@ public class LabeledRangeThing : MonoBehaviour
         _label.text = _labelText;
         _rangeThing.minValue = _minValue;
         _rangeThing.maxValue = _maxValue;
-        _rangeThing.SetValueWithoutNotify(_defaultValue);
         SetValue(_defaultValue);
         _rangeThing.onValueChanged.AddListener(newVal =>
         {

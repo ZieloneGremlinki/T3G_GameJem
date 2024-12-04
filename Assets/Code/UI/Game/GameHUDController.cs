@@ -1,5 +1,7 @@
 using System;
+using GreenGremlins.Code;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GreenGremlins
 {
@@ -10,21 +12,21 @@ namespace GreenGremlins
         
         public void Initialize()
         {
-            _view.Show(new GameHUDModel
+            GameHUDModel model = new GameHUDModel
             {
-                OnGameEnd = GameEnd,
                 OnToggleHUD = ToggleHUD,
-                OnRespawnBall = RespawnBall
-            });
+                OnRespawnBall = RespawnBall,
+                OnMenuBack = BackToMenu,
+                OnNextLevel = NextLevel,
+                OnReplayLevel = ReplayLevel
+            };
+            _view.Show(model);
+            model.OnGameEnd.Invoke(true);
         }
 
         private void OnEnable()
         {
             Initialize();
-        }
-
-        private void GameEnd(bool state)
-        {
         }
 
         private void ToggleHUD()
@@ -34,6 +36,22 @@ namespace GreenGremlins
 
         private void RespawnBall()
         {
+            // TODO: Make ball logic
+        }
+
+        private void BackToMenu()
+        {
+            ElSceneManeger.LoadScene((int)ElSceneManeger.SceneIdx.Menu);
+        }
+        
+        private void NextLevel()
+        {
+            ElSceneManeger.NextScene();
+        }
+
+        private void ReplayLevel()
+        {
+            ElSceneManeger.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
